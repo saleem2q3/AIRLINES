@@ -1,0 +1,181 @@
+/* Variables */
+
+:root {
+    --moveup: up-two up-three up-four;
+    --break-small: 450px;
+    --break-large: 1199px;
+    --pink: #FF1EAD;
+    --dark-purp: #4B384C;
+    --med-purp: #632C65;
+    --light-purp: #E2A9E5;
+}
+
+html, body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    width: 100%;
+    max-width: 100%;
+}
+
+.row {
+    margin: 0;
+}
+
+.about-content, .about-panel {
+    max-width: 50%;
+    width: 50%;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(233, 150, 122, 0.2);
+    background-color: white;
+    overflow-y: auto;
+    height: 100vh;
+    max-width: 100%;
+}
+
+.about-panel {
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-animation: example 1.2s both ease-in;
+    -moz-animation: example 1.2s both ease-in;
+    animation: example 1.2s both ease-in;
+    height: 100vh;
+}
+
+.photo-about {
+    position: relative;
+    top: 0;
+    height: 100vh !important;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.about-info {
+    font-family: "Montserrat";
+    position: absolute;
+    z-index: 100100;
+    top: 50%;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.about-info-name {
+    width: 100%;
+    letter-spacing: 3px;
+    font-weight: 500;
+    font-size: 2.5vw;
+}
+
+.about-info-contact {
+    margin-top: 25px;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+    height: 130px;
+}
+
+.about-info-contact h4 {
+    margin-bottom: 5px;
+    font-weight: 300;
+    font-size: 1.3vw;
+}
+
+.about-info-contact p {
+    font-size: 1.2vw;
+    font-weight: 100;
+    color: #b5b5b5;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.about-info-contact a {
+    margin-bottom: 5px;
+    font-weight: 300;
+    font-size: 1.2vw;
+    color: var(--light-purp);
+}
+
+.about-content {
+    float: left;
+    padding-top: 30px;
+    background: white;
+    color: var(--dark-purp);
+}
+
+.about-content p, .about-content blockquote {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.07em;
+}
+
+.about-content h1 {
+    z-index: -1;
+    color: var(--med-purp);
+    text-align: center;
+    line-height: 90px;
+    font-size: 90px;
+    font-weight: 200;
+    letter-spacing: -0.1em;
+    width: 95%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.about-me {
+    margin: 3% auto;
+    text-align: justify;
+    font-weight: 300;
+    width: 63%;
+}
+
+.about-me p {
+    line-height: 23px;
+}
+
+.row {
+    height: 100vh;
+}
+
+.Synopsis-highlightLine {
+    width: 52px;
+    height: 4px;
+    background: var(--med-purp);
+    margin: 30px 0;
+}
+
+.about-content .Synopsis-highlight {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 25px;
+    width: 100%;
+    color: var(--med-purp);
+}
+
+.photo-about {
+    background: url("https://static.tripcdn.com/packages/flight/static-image-online/latest/flight_v2/h5/bg_flights_v2.png") no-repeat center center;
+    background-size: cover;
+    z-index: 45;
+}
+
+.hide-photo-filter {
+    position: relative;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+}

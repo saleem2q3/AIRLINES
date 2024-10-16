@@ -1,0 +1,116 @@
+@charset "UTF-8";
+ body {
+            font-family: 'Varela Round', sans-serif;
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .background-image {
+            flex: 1;
+            background-image: url('https://c0.wallpaperflare.com/preview/910/698/419/clouds-flight-flying-plane.jpg'); /* Replace with the path to your image */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the background image from repeating */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #fff;
+            padding: 30px;
+        }
+         .background-image h1 {
+            font-size: 48px;
+            animation: fadeInLeft 2s;
+            color: white;
+        }
+        .background-image p {
+            font-size: 24px;
+            animation: fadeInLeft 3s;
+            color: white;
+        }
+        .login-btn {
+            position: absolute;
+            bottom: 30%;
+            left: 20%;
+            transform: translate(-50%, 50%);
+            background-color: #001a70;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .login-btn:hover {
+            background-color: #001a70;
+        }
+        .navbar {
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .navbar .navbar-brand {
+            color: black;
+        }
+        
+        .signup-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .signup-card {
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,.1);
+            background: #fff;
+        }
+        
+        .signup-card .card-header {
+            text-align: center;
+            background: white;
+        }
+        
+        .signup-card .logo-img {
+            max-width: 150px;
+            height: auto;
+        }
+        
+        .signup-card .form-group label {
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .signup-card .form-control {
+            height: 45px;
+            border-radius: 5px;
+        }
+        
+        .signup-card .btn {
+            font-size: 16px;
+            height: 45px;
+            border-radius: 5px;
+            background-color: #001a70;
+            border: none;
+        }
+        
+        .signup-card .btn:hover {
+            background-color: #001a70;
+        }
+        
+        .signup-card .text-center a {
+            color: #001a70;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .signup-card .text-center a:hover {
+            text-decoration: underline;
+        }
+        

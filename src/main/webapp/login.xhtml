@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <title>AIRLINKS || Login Page</title>
+    
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+     
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  .navbar {
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .navbar img {
+            max-height: 50px;
+            max-width: 100%;
+        }
+.login-container {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.form-container {
+    padding: 40px;
+    flex: 1;
+}
+
+.form-title {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+    margin-bottom: 10px;
+}
+
+.form-input:focus {
+    border-color: #007bff;
+}
+
+.form-message {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.options .remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.options .remember-me label {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.options .forgot-password {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.options .forgot-password:hover {
+    color: #0056b3;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none;
+    text-align: center;
+    color: #fff;
+}
+
+.btn.sign-in {
+    background-color: #007bff;
+}
+
+.btn.sign-in:hover {
+    background-color: #0056b3;
+}
+
+.btn.create-account {
+    background-color: #28a745;
+}
+
+.btn.create-account:hover {
+    background-color: #218838;
+}
+
+.sign-up-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.sign-up-link a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.sign-up-link a:hover {
+    color: #0056b3;
+}
+
+.image-container {
+    flex: 1;
+    background-color: #f7f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    </style>
+</head>
+<body>
+   <div class="navbar">
+        <a href="index.jsf">
+            <img src="https://imgs.search.brave.com/znZ-eivdTdpAG9v80dFSDdW6aNarb7YGsCj3F3jIpB8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/cy13b3JsZC5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMjMv/MDUvQWlybGluay1M/b2dvLTUwMHgyODEu/cG5n"/>
+            
+        </a>
+    </div>
+    <div class="login-container">
+        <div class="form-container">
+            <h1 class="form-title">Welcome Back!</h1>
+            <h:form>
+                <h:outputLabel for="email" value="Email Address" class="form-label" />
+                <h:inputText id="email" value="#{customer.email}" required="true"
+                             requiredMessage="Email is required." class="form-input" />
+                <h:message for="email" class="form-message" />
+
+                <h:outputLabel for="password" value="Password" class="form-label" />
+                <h:inputSecret id="password" value="#{customer.password}" required="true"
+                               requiredMessage="Password is required." class="form-input" />
+                <h:message for="password" class="form-message" />
+
+                <div class="options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember"/>
+                        <label for="remember">Remember Me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forget Password?</a>
+                </div>
+
+                <div class="button-group">
+                    <h:commandButton value="Sign In" action="#{customer.login}" class="form-button btn sign-in">
+                        <f:param name="email" value="#{customer.email}}" />
+                    </h:commandButton>
+                    <h:commandButton value="Create Account" action="#" class="form-button btn create-account" />
+                </div>
+                
+                <p class="sign-up-link">Don't have an Account? <a href="signup.jsf">Sign Up</a></p>
+            </h:form>
+        </div>
+        <div class="image-container">
+            <img src="https://w0.peakpx.com/wallpaper/315/592/HD-wallpaper-plane-air-airplane-airport-black-and-white-bw-fly-saudi-airline-sky.jpg" alt="Illustration"/>
+        </div>
+    </div>
+</body>
+</html>

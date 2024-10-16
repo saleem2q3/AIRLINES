@@ -1,0 +1,181 @@
+@charset "UTF-8";
+ body,
+        html {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-heading {
+    background-image: url('https://t3.ftcdn.net/jpg/05/72/52/18/360_F_572521803_CM2GR3pwuK6YstBcTei5QdLLyu3Mdga6.jpg'); /* Use the correct path for your image */
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-heading .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align logo to the left */
+    margin-right: auto; /* Push the logo to the far left */
+}
+
+.page-heading .logo img {
+    width: 180px; /* Increase the size of the logo */
+    height: auto;
+    margin-right: 10px; /* Adjust margin if needed */
+}
+
+.page-direction-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align button to the right */
+    margin-left: auto; /* Push the button to the far right */
+}
+
+.page-direction-button a {
+    background-color: #001a70; /* Use the dark blue color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.page-direction-button a i {
+    margin-right: 15px;
+}
+
+        /* Contact information */
+        .contact-us {
+            padding: 50px 0;
+            background-color: #f5f5f5; /* Changed background color */
+            text-align: center; /* Center alignment */
+        }
+
+        .contact-us .section-heading h2 {
+            color: #333;
+        }
+
+        .contact-us .section-heading p {
+            color: #666;
+        }
+
+        .contact-us img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Contact form */
+        .contact-form {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .contact-form .section-heading h2 {
+            color: #333;
+        }
+
+        .contact-form form {
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input[type="text"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        .contact-form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+
+        /* Map section */
+        .map {
+            padding: 50px 0;
+        }
+
+        .map iframe {
+            border: none;
+            width: 100%;
+            height: 400px;
+        }
+
+        /* Footer */
+        .footer-basic {
+            padding: 40px 0;
+            background-color: #ffffff;
+            color: #4b4c4d;
+        }
+
+        .footer-basic ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .footer-basic li {
+            padding: 0 10px;
+        }
+
+        .footer-basic ul a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        .footer-basic ul a:hover {
+            opacity: 1;
+        }
+
+        .footer-basic .social {
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        .footer-basic .social>a {
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            margin: 0 8px;
+            color: inherit;
+            opacity: 0.75;
+        }
+
+        .footer-basic .social>a:hover {
+            opacity: 0.9;
+        }
+    

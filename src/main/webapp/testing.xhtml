@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Flight Search</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="flightNumber" value="Flight Number:" />
+            <h:inputText id="flightNumber" value="#{flights.flightNumber}" />
+
+            <h:outputLabel for="departureCity" value="Departure City:" />
+            <h:inputText id="departureCity" value="#{flights.departureCity}" />
+
+            <h:outputLabel for="arrivalCity" value="Arrival City:" />
+            <h:inputText id="arrivalCity" value="#{flights.arrivalCity}" />
+
+            <h:outputLabel for="departureTime" value="Departure Time:" />
+            <h:inputText id="departureTime" value="#{flights.departureTime}">
+                <f:converter converterId="localDateTimeConverter" />
+            </h:inputText>
+
+            <h:outputLabel for="arrivalTime" value="Arrival Time:" />
+            <h:inputText id="arrivalTime" value="#{flights.arrivalTime}">
+                <f:converter converterId="localDateTimeConverter" />
+            </h:inputText>
+
+            <h:outputLabel for="airline" value="Airline:" />
+            <h:inputText id="airline" value="#{flights.airline}" />
+
+            <h:outputLabel for="price" value="Price:" />
+            <h:inputText id="price" value="#{flights.price}" />
+            
+            <h:outputLabel for="eseats" value="economy seats:" />
+            <h:inputText id="eseats" value="#{flights.economyseats}" />
+            
+            <h:outputLabel for="bseats" value="Business seats:" />
+            <h:inputText id="bseats" value="#{flights.businessseats}" />
+            
+            <h:outputLabel for="fseats" value="Firstclass seats: " />
+            <h:inputText id="fseats" value="#{flights.firstclassseats}" />
+            
+            
+            <p>#{flights.response}</p>
+            <h:commandButton value="Post Flight" action="#{flights.postflight}" />
+        </h:panelGrid>
+    </h:form>
+
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="departureCity" value="Departure City:" />
+            <h:inputText id="departureCity" value="#{flights.departureCity}" />
+
+            <h:outputLabel for="arrivalCity" value="Arrival City:" />
+            <h:inputText id="arrivalCity" value="#{flights.arrivalCity}" />
+            
+             
+            
+            <h:commandButton value="Search" action="#{flights.searchFlights()}" />
+        </h:panelGrid>
+
+        <h:dataTable value="#{flights.searchResults}" var="flight">
+            <h:column>
+                <f:facet name="header">Flight Number</f:facet>
+                #{flight.flightNumber}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Departure City</f:facet>
+                #{flight.departureCity}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Arrival City</f:facet>
+                #{flight.arrivalCity}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Departure Time</f:facet>
+                #{flight.departureTime}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Arrival Time</f:facet>
+                #{flight.arrivalTime}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Airline</f:facet>
+                #{flight.airline}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Price</f:facet>
+                #{flight.price}
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</h:body>
+</html>

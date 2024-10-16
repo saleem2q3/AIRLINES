@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Seat Selection</title>
+    <style>
+        /* Background styling for the entire page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: fadeInBody 1s ease-out;
+        }
+
+        /* Styling for the container */
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            width: 90%;
+            max-width: 800px;
+            animation: fadeInContainer 1s ease-out;
+            margin: 20px;
+        }
+
+        /* Heading styles */
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+            animation: fadeInHeading 0.8s ease-out;
+        }
+
+        /* Grid styles for seating arrangement */
+        .seat-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            animation: fadeInSeats 1.2s ease-out;
+        }
+
+        /* Individual seat styling */
+        .seat {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #fff;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Different states for seats */
+        .available {
+            background-color: #90caf9;
+            animation: pulseAvailable 1.5s infinite;
+        }
+
+        .selected {
+            background-color: #4caf50;
+            transform: scale(1.1);
+        }
+
+        .occupied {
+            background-color: #f44336;
+            cursor: not-allowed;
+            animation: shakeOccupied 0.8s;
+        }
+
+        /* Grid styling for the form elements */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        /* Output label styling */
+        .form-grid h\:outputLabel {
+            text-align: right;
+            padding-right: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Input text styling */
+        .form-grid h\:inputText {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        /* Placeholder styling */
+        .form-grid h\:inputText::placeholder {
+            color: #999;
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        /* On focus, input text gets a border color change */
+        .form-grid h\:inputText:focus {
+            border-color: #4caf50;
+            outline: none;
+        }
+
+        /* Styling for the book button */
+        .book-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+            animation: fadeInButton 1s ease-out;
+        }
+
+        /* Hover effect for the book button */
+        .book-button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        /* Styling for the response text */
+        .response-text {
+            text-align: center;
+            color: red;
+            margin-top: 10px;
+            font-weight: bold;
+            animation: fadeInResponse 1.5s ease-out;
+        }
+
+        /* Animation for the body */
+        @keyframes fadeInBody {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Animation for the container */
+        @keyframes fadeInContainer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for headings */
+        @keyframes fadeInHeading {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for seat grid */
+        @keyframes fadeInSeats {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Animation for the book button */
+        @keyframes fadeInButton {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for response text */
+        @keyframes fadeInResponse {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Pulse animation for available seats */
+        @keyframes pulseAvailable {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Shake animation for occupied seats */
+        @keyframes shakeOccupied {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            20%, 60% {
+                transform: translateX(-2px);
+            }
+            40%, 80% {
+                transform: translateX(2px);
+            }
+        }
+    </style>
+    <script>
+        function selectSeat(seatNumber) {
+            let seatElement = document.getElementById('seat-' + seatNumber);
+            if (seatElement.classList.contains('occupied')) {
+                seatElement.style.animation = 'shakeOccupied 0.8s';
+                return; // Do nothing if the seat is occupied
+            }
+            document.getElementById('seatForm:seatNumber').value = seatNumber;
+            let seats = document.getElementsByClassName('seat');
+            for (let seat of seats) {
+                seat.classList.remove('selected');
+            }
+            seatElement.classList.add('selected');
+        }
+    </script>
+</h:head>
+<h:body>    
+    <div class="container">
+        <h1>Seat Selection</h1>
+        <h:form id="seatForm">
+            <!-- Display received parameters -->
+            <div class="form-grid">
+                <h:outputLabel for="flightNumber" value="Flight Number:" />
+                <h:inputText id="flightNumber" value="#{seat.flightNumber}" placeholder="Enter flight number" />
+
+                <h:outputLabel for="email" value="Email:" />
+                <h:inputText id="email" value="#{seat.email}" readonly="true" placeholder="Enter email" />
+
+                <h:outputLabel for="phoneNumber" value="Phone Number:" />
+                <h:inputText id="phoneNumber" value="#{seat.phoneNumber}" placeholder="Enter phone number" />
+
+                <h:outputLabel for="firstName" value="Passenger Name:" />
+                <h:inputText id="firstName" value="#{seat.name}" placeholder="Enter passenger name" />
+
+                <h:outputLabel for="lastName" value="Passport ID:" />
+                <h:inputText id="lastName" value="#{seat.passportId}" placeholder="Enter passport ID" />
+
+                <h:outputLabel for="seatNumber" value="Seat Number:" />
+                <h:inputText id="seatNumber" value="#{seat.seatNumber}" placeholder="Enter seat number" />
+
+                <h:outputLabel for="seatClass" value="Seat Class:" />
+                <h:inputText id="seatClass" value="#{seat.seatClass}" placeholder="Enter seat class" />
+            </div>
+
+            <!-- Display seat grid -->
+            <div class="seat-grid">
+                <ui:repeat value="#{seat.seatNumbers}" var="seatNumber">
+                    <div id="seat-#{seatNumber}" 
+                         class="seat #{seat.isSeatOccupied(seatNumber) ? 'occupied' : 'available'}" 
+                         style="grid-column: #{seat.getSeatPosition(seatNumber)};" 
+                         onclick="selectSeat(#{seatNumber})">
+                        #{seatNumber}
+                    </div>
+                </ui:repeat>
+            </div>
+
+            <!-- Command button to book seat -->
+            <h:commandButton value="Book Seat" action="#{seat.bookSeat}" styleClass="book-button" />
+            <h:outputText value="#{seat.response}" styleClass="response-text" />
+        </h:form>
+    </div>
+</h:body>
+</html>

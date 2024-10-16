@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      <h:head>
+    <title>AIRLINKS - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"/>
+    
+    <link rel="stylesheet" type="text/css" href="resources/css/homepage.css" />   
+    <style>
+    .back-to-top {
+    background-color: #001a70;
+    position: fixed;
+    display: relative;
+    right: 55px;
+    bottom: 45px;
+    z-index: 99;
+}
+</style>    
+</h:head>
+<h:body>
+
+    <div class="background"></div>
+    
+    <div class="navbar" id="navbar">
+        <div class="logo">
+            <a href="index.jsf">
+                <img src="https://imgs.search.brave.com/znZ-eivdTdpAG9v80dFSDdW6aNarb7YGsCj3F3jIpB8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9sb2dv/cy13b3JsZC5uZXQv/d3AtY29udGVudC91/cGxvYWRzLzIwMjMv/MDUvQWlybGluay1M/b2dvLTUwMHgyODEu/cG5n" alt="AIRLINK" width="150" height="90" />
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="index.jsf"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="flightbooking.jsf"><i class="fa fa-plane"></i> Flights</a></li>
+            <li><a href="about.jsf"><i class="fa fa-info-circle"></i> About</a></li>
+            <li><a href="contact.jsf"><i class="fa fa-envelope"></i> Contact</a></li>
+             <li><a href="login.jsf" class="login-btn"><i class="fa fa-user"></i> Login</a></li>
+        </ul>
+    </div>
+	 <div class="content">
+	    <div class="big-image">
+	        <img src="https://i0.wp.com/www.pixel4k.com/wp-content/uploads/2019/01/airplane-flying-over-beach-shore-sunset-4k_1547938028.jpg.webp?ssl=1" alt="Background Image" />
+	    </div>
+	    <div class="info-section">
+	    <h1>BOOK YOUR
+	         FLIGHT</h1>
+	        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. 
+	        You may see some for as low as $.17 each.</p>
+	        <button class="discover-more-btn">Discover More...</button>
+	    </div>
+	</div>
+ <div class="custom-banner">
+        <div>
+            <h1>A CLASS APART. IT'S THE NEW STANDARD.</h1>
+            <p>Discover our world of exclusive offers and services that change the way you travel.</p>
+        </div>
+    </div>
+    <ui:include src="/travel.xhtml" />
+    <!-- 
+        <div id="slider-wrapper">
+  <div class="inner-wrapper">
+    <input type="radio" name="slide" class="control" id="Slide1" checked="checked" />
+    <label for="Slide1" id="s1"></label>
+    <input type="radio" name="slide" class="control" id="Slide2" />
+    <label for="Slide2" id="s2"></label>
+    <input type="radio" name="slide" class="control" id="Slide3" />
+    <label for="Slide3" id="s3"></label>
+    <input type="radio" name="slide" class="control" id="Slide4" />
+    <label for="Slide4" id="s4"></label>
+    <div class="overflow-wrapper">
+      <a class="slide" href=""><img src="https://slidebazaar.com/wp-content/uploads/2022/10/airline-industry-presentation-template8.jpg	" /></a>
+      <a class="slide" href=""><img src="https://cdn.businesstraveller.com/wp-content/uploads/fly-images/807449/Happy-passenger-e1494847969809-916x515.jpg" /></a>
+      <a class="slide" href=""><img src="https://www.sps-aviation.com/images/2687.jpg" /></a>
+      <a class="slide" href=""><img src="https://airspace-africa.com/wp-content/uploads/2023/06/airlink-1170x658.jpeg" /></a>
+    </div>
+  </div>
+</div>  -->
+<div class="banner">
+    <div class="title">
+        Travel Extraordinary
+    </div>
+    <div class="info">
+Airlink maintains over 68 aircraft, operating to more than 45 destinations in 15 African countries, including Madagascar and St Helena Island    </div>
+</div>
+
+   
+   
+    <div class="container">
+        <div class="card">
+            <div class="card-img"></div>
+            <div class="card-body">
+                <h3 class="card-title">A starry night</h3>
+                <p>Look up at the night sky, and find yourself immersed in the amazing mountain range of Aspen.</p>
+                <a href="#" class="card-button">Explore <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Card Two -->
+        <div class="card">
+            <div class="card-img"></div>
+            <div class="card-body">
+                <h3 class="card-title">Misty mornings</h3>
+                <p>Capture the stunning essence of the early morning sunrise in the Californian wilderness.</p>
+                <a href="#" class="card-button">Explore <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Card Three -->
+        <div class="card">
+            <div class="card-img"></div>
+            <div class="card-body">
+                <h3 class="card-title">Utah sunsets</h3>
+                <p>Sunsets over the stunning Utah Canyonlands, is truly something much more than incredible.</p>
+                <a href="#" class="card-button">Explore <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+            
+        </div>
+    </div>
+      <section class="home-about-area">
+        <div class="container-fluid">
+            <div class="row align-items-center justify-content-end">
+                <div class="col-lg-6 col-md-12 home-about-left">
+                    <h1>
+                        Planning Your Journey? <br />
+                        Let Us Help You <br />
+                        Travel with Ease
+                    </h1>
+                    <p>
+                        Traveling can be stressful, but we're here to make it easier. From booking to boarding, we provide support and information to ensure your journey is smooth and enjoyable. Contact us for personalized travel assistance and exclusive offers tailored to your needs.
+                    </p>
+                    <a href="#" class="primary-btn text-uppercase">Learn More...</a>
+                </div>
+                <div class="col-lg-6 col-md-12 home-about-right no-padding">
+                    <img class="img-fluid" src="https://imgs.search.brave.com/VxOOMKlFIq92Uy5gknNvp_VeMaeJM3ZKLG_M85Ui8tg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQ2/NTkxNjAzMS9waG90/by90aGUtd2F5LXRv/LXRoZS1wbGFuZS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/alRhbHYwRGRHWmE3/NkU2cXJTakgtMnJt/VHAyTk5IdmRnU2JR/QkVEM3BQOD0" alt="About Image" />
+                </div>
+            </div>
+        </div>
+    </section>
+     <div class="content-section">
+        <header>
+            <div class="intro text-center">
+                <i class="ion-ios-sunny"></i>
+                <h1>PREPARE TO TRAVEL</h1>
+                <p>Helpful hints for everything from packing to paperwork, so you are fully prepared.</p>
+                <hr />
+            </div>
+        </header>
+        <section class="content-area">
+            <div class="plan plan1">
+                <div class="image" style="background-image: url('https://unsplash.it/400/400')">
+                </div>
+                <div class="image-text">
+                    <h3>4,000 miles north</h3>
+                    <p>Kickstarter quinoa succulents chicharrones, coloring book portland readymade asymmetrical typewriter fanny pack literally.</p>
+                </div>
+            </div>
+
+            <div class="plan plan2">
+                <div class="image" style="background-image: url('https://unsplash.it/350/350')">
+                </div>
+                <div class="image-text">
+                    <h3>500 miles north</h3>
+                    <p>Art party wolf copper roof party mug succulents, four dollar coloring book portland toast chia listicle fashion axe blog selfies normcore.</p>
+                </div>
+            </div>
+
+            <div class="plan plan3">
+                <div class="image" style="background-image: url('https://unsplash.it/420/420')">
+                </div>
+                <div class="image-text">
+                    <h3>1,000 miles north</h3>
+                    <p>Ethical williamsburg roof party chicharrones quinoa. Fingerstache microdosing truffaut.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <br/>
+     <div class="info-container">
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/256/7893/7893979.png" alt="Plane Icon" class="icon" />
+            <p>2000+ Daily flights</p>
+        </div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/128/2947/2947660.png" alt="Domestic Destinations Icon" class="icon" />
+            <p>80+ Domestic Destinations</p>
+        </div>
+        <div class="info-box">
+            <img src="https://www.freeiconspng.com/thumbs/travel-icon/travel-guide-icon-map-ticket-travel-icon-17.png" alt="International Destinations Icon" class="icon" />
+            <p>30+ International Destinations</p>
+        </div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/2491/2491921.png" alt="Happy Passengers Icon" class="icon" />
+            <p>500 Mn+ happy passengers</p>
+        </div>
+        <div class="info-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/8983/8983164.png" alt="Fleet Icon" class="icon" />
+            <p>300+ Fleet strong</p>
+        </div>
+    </div>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+    
+        <div class="footer-basic">
+            <footer>
+                <div class="social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-cogs"></i> Services</a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-info-circle"></i> About</a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-lock"></i> Privacy Policy</a></li>
+                </ul>
+                <br/>
+                <p align="center">&#169; 2024 AIRLINKS. All rights reserved.</p>
+            </footer>
+        </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('#navbar').addClass('navbar-scrolled');
+            } else {
+                $('#navbar').removeClass('navbar-scrolled');
+            }
+        });
+    </script>
+</h:body>
+</html>
